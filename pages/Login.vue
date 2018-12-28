@@ -10,7 +10,7 @@
         @click:append="show_password = !show_password">
       </v-text-field>
       <v-btn @click="login">login</v-btn>
-      <v-btn href="/Register">register</v-btn>
+      <v-btn to="/Register" nuxt=true>register</v-btn>
     </v-form>
   </v-layout>
 </template>
