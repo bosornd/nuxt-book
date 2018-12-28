@@ -97,16 +97,20 @@
         clipped: false,
         drawer: true,
         fixed: false,
-        items: [
-          { icon: 'apps', title: 'Welcome', to: '/' },
-          { icon: 'bubble_chart', title: 'Inspire', to: '/inspire' },
-          { icon: 'face', title: 'User Info', to: '/user/' + this.$auth.user.user.username },
-          { icon: 'book', title: 'Show Books', to: '/ShowBooks'}
-        ],
         miniVariant: false,
         right: true,
         rightDrawer: false,
         title: 'Vuetify.js'
+      }
+    },
+    computed: {
+      items: function(){
+        return [
+          { icon: 'apps', title: 'Welcome', to: '/' },
+          { icon: 'bubble_chart', title: 'Inspire', to: '/inspire' },
+          { icon: 'face', title: 'User Info', to: this.$auth.loggedIn ? '/user/' + this.$auth.user.user.username : '/user/' },
+          { icon: 'book', title: 'Show Books', to: '/ShowBooks'}
+        ];
       }
     },
     methods: {
