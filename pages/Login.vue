@@ -10,7 +10,7 @@
         @click:append="show_password = !show_password">
       </v-text-field>
       <v-btn @click="login">login</v-btn>
-      <v-btn @click="register">register</v-btn>
+      <v-btn href="/Register">register</v-btn>
     </v-form>
   </v-layout>
 </template>
@@ -46,9 +46,6 @@
             this.password = ''
           })
         }
-      },
-      register(){
-        this.$router.push({ name: 'Register' })
       }
     }
   }
