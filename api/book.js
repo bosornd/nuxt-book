@@ -5,6 +5,7 @@ var Book = require('../models/Book.js');
 
 /* GET ALL BOOKS */
 router.get('/', function(req, res, next) {
+  console.log(req.user.user.username)
   Book.find(function (err, products) {
     if (err) return next(err);
     res.json(products);
